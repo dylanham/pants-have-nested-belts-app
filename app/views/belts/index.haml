@@ -1,0 +1,9 @@
+%h1= "List of Belts for #{@pant.description}"
+= link_to 'Pants Path', pant_path(@pant)
+= link_to 'New Belt', new_pant_belt_path(@pant)
+%hr
+- @belts.each do |belt|
+  = link_to belt.name, pant_belt_path(@pant, belt)
+  = link_to 'Edit', edit_pant_belt_path(@pant, belt)
+  = link_to 'Delete', pant_belt_path(@pant, belt), method: :delete
+%hr

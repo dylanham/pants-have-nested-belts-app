@@ -1,0 +1,6 @@
+%h1 Check out your pants!
+= @pant.description
+= link_to 'Edit', edit_pant_path(@pant)
+= link_to 'Delete', pant_path(@pant), method: :delete, data:{confirm: 'What?!'}
+= link_to 'Index', pants_path
+= link_to 'belt', pant_belts_path(@pant)

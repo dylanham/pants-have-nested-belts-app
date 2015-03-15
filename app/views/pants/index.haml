@@ -1,0 +1,12 @@
+= link_to 'Sign In', sign_in_path
+= link_to 'Sign Up', sign_up_path
+= link_to 'sign_out', sign_out_path
+%br
+%h1 List of Pants
+= link_to 'New Pants', new_pant_path
+%hr
+- @pants.each do |pant|
+  %p= link_to pant.description, pant_path(pant)
+  %p= link_to 'Edit', edit_pant_path(pant)
+  %p= link_to 'Delete', pant_path(pant), method: :delete, data:{confirm: 'Do you hate me?'}
+  %hr
